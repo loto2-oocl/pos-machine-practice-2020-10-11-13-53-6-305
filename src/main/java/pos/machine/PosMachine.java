@@ -5,9 +5,8 @@ import java.util.*;
 public class PosMachine {
     public String printReceipt(List<String> barcodes) {
         List<ReceiptItem> receiptItems = getReceiptItemsList(barcodes);
-        String receipt = generateReceipt(receiptItems);
 
-        return receipt;
+        return generateReceipt(receiptItems);
     }
 
     private String generateReceipt(List<ReceiptItem> receiptItems) {
