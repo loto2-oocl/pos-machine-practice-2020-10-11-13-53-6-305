@@ -31,7 +31,7 @@ public class PosMachine {
     }
 
     private Integer calculateTotalAmount(List<ReceiptItem> receiptItems) {
-        return receiptItems.stream().mapToInt(item -> item.getSubtotal()).sum();
+        return receiptItems.stream().mapToInt(ReceiptItem::getSubtotal).sum();
     }
 
     private String generateProductDescriptionLine(ReceiptItem receiptItem) {
