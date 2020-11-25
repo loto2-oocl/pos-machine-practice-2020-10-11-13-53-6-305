@@ -11,19 +11,19 @@ public class PosMachine {
     }
 
     private String generateReceipt(List<ReceiptItem> receiptItems) {
-        String receipt = "***<store earning no money>Receipt ***\r\n";
+        StringBuilder receipt = new StringBuilder("***<store earning no money>Receipt ***\r\n");
 
         for (ReceiptItem receiptItem : receiptItems) {
-            receipt += generateProductDescriptionLine(receiptItem);
-            receipt += "\r\n";
+            receipt.append(generateProductDescriptionLine(receiptItem));
+            receipt.append("\r\n");
         }
 
-        receipt += "----------------------\r\n";
-        receipt += generateReceiptTotalAmountLine(receiptItems);
-        receipt += "\r\n";
-        receipt += "**********************";
+        receipt.append("----------------------\r\n");
+        receipt.append(generateReceiptTotalAmountLine(receiptItems));
+        receipt.append("\r\n");
+        receipt.append("**********************");
 
-        return receipt;
+        return receipt.toString();
     }
 
     private String generateReceiptTotalAmountLine(List<ReceiptItem> receiptItems) {
