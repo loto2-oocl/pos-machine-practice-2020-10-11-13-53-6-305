@@ -70,7 +70,7 @@ public class PosMachine {
     }
 
     private ItemInfo findProductByBarcode(String barcode, List<ItemInfo> allProducts) {
-        return allProducts.stream().filter(product -> product.getBarcode() == barcode).findAny().orElse(null);
+        return allProducts.stream().filter(product -> product.getBarcode().equals(barcode)).findAny().orElse(null);
     }
 
     private List<ItemInfo> findAllProducts() {
